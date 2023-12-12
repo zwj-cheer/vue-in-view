@@ -1,45 +1,44 @@
 # vue-in-view
 
-This template should help get you started developing with Vue 3 in Vite.
+Get notified when a DOM element enters or exits the viewport.
 
-## Recommended IDE Setup
+## In-view
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+See [in-view](https://www.npmjs.com/package/in-view)
 
-## Type Support for `.vue` Imports in TS
+## Installation & Usage
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+### npm & ESM
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+```bash
+npm install vue3-in-view
+```
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+### pnpm & ESM
 
-## Customize configuration
+```bash
+pnpm add vue3-in-view
+```
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Demo
+## Example
 
 ```sh
 <script setup lang="ts">
-import { InView } from "vue-in-view";
+import { InView } from "vue3-in-view";
 
 
 const handleEnter = (e: Element): void => {
   console.log(e, 'on');
 }
 
-const handleonceEnter = (e: Element): void => {
+const handleOnceEnter = (e: Element): void => {
   console.log(e, 'once');
 }
 
 </script>
 
 <template>
-  <InView @on-enter="handleEnter" @once-enter="handleonceEnter">dfsdafsadfsadfsdf</InView>
+  <InView @on-enter="handleEnter" @once-enter="handleOnceEnter">dfsdafsadfsadfsdf</InView>
   <div class="test">1</div>
   <InView @on-enter="handleEnter" @once-enter="handleonceEnter">dfsdafsadfsadfsdf</InView>
   <div class="test">2</div>
