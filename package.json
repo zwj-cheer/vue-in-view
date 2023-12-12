@@ -2,6 +2,10 @@
   "name": "vue-in-view",
   "version": "0.0.1",
   "type": "module",
+  "description": "Vue.js in view",
+  "repository": {
+    "url": "https://github.com/zwj-cheer/vue-in-view"
+  },
   "exports": {
     ".": {
       "import": {
